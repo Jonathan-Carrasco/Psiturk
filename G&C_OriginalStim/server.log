@@ -1,0 +1,1003 @@
+[2018-08-03 13:26:03 -0400] [30211] [ERROR] Exception in worker process:
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/arbiter.py", line 515, in spawn_worker
+    worker.init_process()
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/workers/base.py", line 122, in init_process
+    self.load_wsgi()
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/workers/base.py", line 130, in load_wsgi
+    self.wsgi = self.app.wsgi()
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/app/base.py", line 67, in wsgi
+    self.callable = self.load()
+  File "/usr/local/lib/python2.7/site-packages/psiturk/experiment_server.py", line 47, in load
+    return util.import_app("psiturk.experiment:app")
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/util.py", line 357, in import_app
+    __import__(module)
+  File "/usr/local/lib/python2.7/site-packages/psiturk/experiment.py", line 89, in <module>
+    init_db()
+  File "/usr/local/lib/python2.7/site-packages/psiturk/db.py", line 37, in init_db
+    Base.metadata.create_all(bind=engine)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/schema.py", line 2848, in create_all
+    tables=tables)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 1479, in _run_visitor
+    conn._run_visitor(visitorcallable, element, **kwargs)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 1122, in _run_visitor
+    **kwargs).traverse_single(element)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/sql/visitors.py", line 122, in traverse_single
+    return meth(obj, **kw)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/engine/ddl.py", line 70, in visit_metadata
+    self.traverse_single(table, create_ok=True)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/sql/visitors.py", line 122, in traverse_single
+    return meth(obj, **kw)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/engine/ddl.py", line 89, in visit_table
+    self.connection.execute(schema.CreateTable(table))
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 662, in execute
+    params)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 720, in _execute_ddl
+    compiled
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 874, in _execute_context
+    context)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 1024, in _handle_dbapi_exception
+    exc_info
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/util/compat.py", line 196, in raise_from_cause
+    reraise(type(exception), exception, tb=exc_tb)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 867, in _execute_context
+    context)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/engine/default.py", line 324, in do_execute
+    cursor.execute(statement, parameters)
+OperationalError: (OperationalError) table "GoldstoneRevised" already exists u'\nCREATE TABLE "GoldstoneRevised" (\n\tuniqueid VARCHAR(128) NOT NULL, \n\tassignmentid VARCHAR(128) NOT NULL, \n\tworkerid VARCHAR(128) NOT NULL, \n\thitid VARCHAR(128) NOT NULL, \n\tipaddress VARCHAR(128), \n\tbrowser VARCHAR(128), \n\tplatform VARCHAR(128), \n\tlanguage VARCHAR(128), \n\tcond INTEGER, \n\tcounterbalance INTEGER, \n\tcodeversion VARCHAR(128), \n\tbeginhit DATETIME, \n\tbeginexp DATETIME, \n\tendhit DATETIME, \n\tbonus FLOAT, \n\tstatus INTEGER, \n\tmode VARCHAR(128), \n\tdatastring TEXT(4294967295), \n\tPRIMARY KEY (uniqueid)\n)\n\n' ()
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/arbiter.py", line 515, in spawn_worker
+    worker.init_process()
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/workers/base.py", line 122, in init_process
+    self.load_wsgi()
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/workers/base.py", line 130, in load_wsgi
+    self.wsgi = self.app.wsgi()
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/app/base.py", line 67, in wsgi
+    sel[2018-08-03 13:26:03 -0400] [30210] [ERROR] Exception in worker process:
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/arbiter.py", line 515, in spawn_worker
+    worker.init_process()
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/workers/base.py", line 122, in init_process
+    self.load_wsgi()
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/workers/base.py", line 130, in load_wsgi
+    self.wsgi = self.app.wsgi()
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/app/base.py", line 67, in wsgi
+    self.callable = self.load()
+  File "/usr/local/lib/python2.7/site-packages/psiturk/experiment_server.py", line 47, in load
+    return util.import_app("psiturk.experiment:app")
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/util.py", line 357, in import_app
+    __import__(module)
+  File "/usr/local/lib/python2.7/site-packages/psiturk/experiment.py", line 89, in <module>
+    init_db()
+  File "/usr/local/lib/python2.7/site-packages/psiturk/db.py", line 37, in init_db
+    Base.metadata.create_all(bind=engine)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/schema.py", line 2848, in create_all
+    tables=tables)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 1479, in _run_visitor
+    conn._run_visitor(visitorcallable, element, **kwargs)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 1122, in _run_visitor
+    **kwargs).traverse_single(element)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/sql/visitors.py", line 122, in traverse_single
+    return meth(obj, **kw)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/engine/ddl.py", line 70, in visit_metadata
+    self.traverse_single(table, create_ok=True)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/sql/visitors.py", line 122, in traverse_single
+    return meth(obj, **kw)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/engine/ddl.py", line 89, in visit_table
+    self.connection.execute(schema.CreateTable(table))
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 662, in execute
+    params)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 720, in _execute_ddl
+    compiled
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 874, in _execute_context
+    context)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 1024, in _handle_dbapi_exception
+    exc_info
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/util/compat.py", line 196, in raise_from_cause
+    reraise(type(exception), exception, tb=exc_tb)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 867, in _execute_context
+    context)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/engine/default.py", line 324, in do_execute
+    cursor.execute(statement, parameters)
+OperationalError: (OperationalError) table "GoldstoneRevised" already exists u'\nCREATE TABLE "GoldstoneRevised" (\n\tuniqueid VARCHAR(128) NOT NULL, \n\tassignmentid VARCHAR(128) NOT NULL, \n\tworkerid VARCHAR(128) NOT NULL, \n\thitid VARCHAR(128) NOT NULL, \n\tipaddress VARCHAR(128), \n\tbrowser VARCHAR(128), \n\tplatform VARCHAR(128), \n\tlanguage VARCHAR(128), \n\tcond INTEGER, \n\tcounterbalance INTEGER, \n\tcodeversion VARCHAR(128), \n\tbeginhit DATETIME, \n\tbeginexp DATETIME, \n\tendhit DATETIME, \n\tbonus FLOAT, \n\tstatus INTEGER, \n\tmode VARCHAR(128), \n\tdatastring TEXT(4294967295), \n\tPRIMARY KEY (uniqueid)\n)\n\n' ()
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/arbiter.py", line 515, in spawn_worker
+    worker.init_process()
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/workers/base.py", line 122, in init_process
+    self.load_wsgi()
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/workers/base.py", line 130, in load_wsgi
+    self.wsgi = self.app.wsgi()
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/app/base.py", line 67, in wsgi
+    self.callable = self.load()
+  File "/usr/local/lib/python2.7/site-packages/psiturk/experiment_server.py", line 47, in load
+    return util.import_app("psiturk.experiment:app")
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/util.py", line 357, in import_app
+    __import__(module)
+  File "/usr/local/lib/python2.7/site-packages/psiturk/experiment.py", line 89, in <module>
+    init_db()
+  File "/usr/local/lib/python2.7/site-packages/psiturk/db.py", line 37, in init_db
+    Base.metadata.create_all(bind=engine)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/schema.py", line 2848, in create_all
+    tables=tables)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 1479, in _run_visitor
+    conn._run_visitor(visitorcallable, element, **kwargs)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 1122, in _run_visitor
+    **kwargs).traverse_single(element)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/sql/visitors.py", line 122, in traverse_single
+    return meth(obj, **kw)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/engine/ddl.py", line 70, in visit_metadata
+    self.traverse_single(table, create_ok=True)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/sql/visitors.py", line 122, in traverse_single
+    return meth(obj, **kw)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/engine/ddl.py", line 89, in visit_table
+    self.connection.execute(schema.CreateTable(table))
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 662, in execute
+    params)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 720, in _execute_ddl
+    compiled
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 874, in _execute_context
+    context)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 1024, in _handle_dbapi_exception
+    exc_info
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/util/compat.py", line 196, in raise_from_cause
+    reraise(type(exception), exception, tb=exc_tb)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 867, in _execute_context
+    context)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/engine/default.py", line 324, in do_execute
+    cursor.execute(statement, parameters)
+OperationalError: (OperationalError) table "GoldstoneRevised" already exists u'\nCREATE TABLE "GoldstoneRevised" (\n\tuniqueid VARCHAR(128) NOT NULL, \n\tassignmentid VARCHAR(128) NOT NULL, \n\tworkerid VARCHAR(128) NOT NULL, \n\thitid VARCHAR(128) NOT NULL, \n\tipaddress VARCHAR(128), \n\tbrowser VARCHAR(128), \n\tplatform VARCHAR(128), \n\tlanguage VARCHAR(128), \n\tcond INTEGER, \n\tcounterbalance INTEGER, \n\tcodeversion VARCHAR(128), \n\tbeginhit DATETIME, \n\tbeginexp DATETIME, \n\tendhit DATETIME, \n\tbonus FLOAT, \n\tstatus INTEGER, \n\tmode VARCHAR(128), \n\tdatastring TEXT(4294967295), \n\tPRIMARY KEY (uniqueid)\n)\n\n' ()
+f.callable = self.load()
+  File "/usr/local/lib/python2.7/site-packages/psiturk/experiment_server.py", line 47, in load
+    return util.import_app("psiturk.experiment:app")
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/util.py", line 357, in import_app
+    __import__(module)
+  File "/usr/local/lib/python2.7/site-packages/psiturk/experiment.py", line 89, in <module>
+    init_db()
+  File "/usr/local/lib/python2.7/site-packages/psiturk/db.py", line 37, in init_db
+    Base.metadata.create_all(bind=engine)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/schema.py", line 2848, in create_all
+    tables=tables)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 1479, in _run_visitor
+    conn._run_visitor(visitorcallable, element, **kwargs)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 1122, in _run_visitor
+    **kwargs).traverse_single(element)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/sql/visitors.py", line 122, in traverse_single
+    return meth(obj, **kw)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/engine/ddl.py", line 70, in visit_metadata
+    self.traverse_single(table, create_ok=True)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/sql/visitors.py", line 122, in traverse_single
+    return meth(obj, **kw)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/engine/ddl.py", line 89, in visit_table
+    self.connection.execute(schema.CreateTable(table))
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 662, in execute
+    params)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 720, in _execute_ddl
+    compiled
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 874, in _execute_context
+    context)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 1024, in _handle_dbapi_exception
+    exc_info
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/util/compat.py", line 196, in raise_from_cause
+    reraise(type(exception), exception, tb=exc_tb)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 867, in _execute_context
+    context)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/engine/default.py", line 324, in do_execute
+    cursor.execute(statement, parameters)
+OperationalError: (OperationalError) table "GoldstoneRevised" already exists u'\nCREATE TABLE "GoldstoneRevised" (\n\tuniqueid VARCHAR(128) NOT NULL, \n\tassignmentid VARCHAR(128) NOT NULL, \n\tworkerid VARCHAR(128) NOT NULL, \n\thitid VARCHAR(128) NOT NULL, \n\tipaddress VARCHAR(128), \n\tbrowser VARCHAR(128), \n\tplatform VARCHAR(128), \n\tlanguage VARCHAR(128), \n\tcond INTEGER, \n\tcounterbalance INTEGER, \n\tcodeversion VARCHAR(128), \n\tbeginhit DATETIME, \n\tbeginexp DATETIME, \n\tendhit DATETIME, \n\tbonus FLOAT, \n\tstatus INTEGER, \n\tmode VARCHAR(128), \n\tdatastring TEXT(4294967295), \n\tPRIMARY KEY (uniqueid)\n)\n\n' ()
+[2018-08-03 13:26:03 -0400] [30212] [ERROR] Exception in worker process:
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/arbiter.py", line 515, in spawn_worker
+    worker.init_process()
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/workers/base.py", line 122, in init_process
+    self.load_wsgi()
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/workers/base.py", line 130, in load_wsgi
+    self.wsgi = self.app.wsgi()
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/app/base.py", line 67, in wsgi
+    self.callable = self.load()
+  File "/usr/local/lib/python2.7/site-packages/psiturk/experiment_server.py", line 47, in load
+    return util.import_app("psiturk.experiment:app")
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/util.py", line 357, in import_app
+    __import__(module)
+  File "/usr/local/lib/python2.7/site-packages/psiturk/experiment.py", line 89, in <module>
+    init_db()
+  File "/usr/local/lib/python2.7/site-packages/psiturk/db.py", line 37, in init_db
+    Base.metadata.create_all(bind=engine)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/schema.py", line 2848, in create_all
+    tables=tables)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 1479, in _run_visitor
+    conn._run_visitor(visitorcallable, element, **kwargs)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 1122, in _run_visitor
+    **kwargs).traverse_single(element)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/sql/visitors.py", line 122, in traverse_single
+    return meth(obj, **kw)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/engine/ddl.py", line 70, in visit_metadata
+    self.traverse_single(table, create_ok=True)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/sql/visitors.py", line 122, in traverse_single
+    return meth(obj, **kw)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/engine/ddl.py", line 89, in visit_table
+    self.connection.execute(schema.CreateTable(table))
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 662, in execute
+    params)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 720, in _execute_ddl
+    compiled
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 874, in _execute_context
+    context)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 1024, in _handle_dbapi_exception
+    exc_info
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/util/compat.py", line 196, in raise_from_cause
+    reraise(type(exception), exception, tb=exc_tb)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 867, in _execute_context
+    context)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/engine/default.py", line 324, in do_execute
+    cursor.execute(statement, parameters)
+OperationalError: (OperationalError) table "GoldstoneRevised" already exists u'\nCREATE TABLE "GoldstoneRevised" (\n\tuniqueid VARCHAR(128) NOT NULL, \n\tassignmentid VARCHAR(128) NOT NULL, \n\tworkerid VARCHAR(128) NOT NULL, \n\thitid VARCHAR(128) NOT NULL, \n\tipaddress VARCHAR(128), \n\tbrowser VARCHAR(128), \n\tplatform VARCHAR(128), \n\tlanguage VARCHAR(128), \n\tcond INTEGER, \n\tcounterbalance INTEGER, \n\tcodeversion VARCHAR(128), \n\tbeginhit DATETIME, \n\tbeginexp DATETIME, \n\tendhit DATETIME, \n\tbonus FLOAT, \n\tstatus INTEGER, \n\tmode VARCHAR(128), \n\tdatastring TEXT(4294967295), \n\tPRIMARY KEY (uniqueid)\n)\n\n' ()
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/arbiter.py", line 515, in spawn_worker
+    worker.init_process()
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/workers/base.py", line 122, in init_process
+    self.load_wsgi()
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/workers/base.py", line 130, in load_wsgi
+    self.wsgi = self.app.wsgi()
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/app/base.py", line 67, in wsgi
+    self.callable = self.load()
+  File "/usr/local/lib/python2.7/site-packages/psiturk/experiment_server.py", line 47, in load
+    return util.import_app("psiturk.experiment:app")
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/util.py", line 357, in import_app
+    __import__(module)
+  File "/usr/local/lib/python2.7/site-packages/psiturk/experiment.py", line 89, in <module>
+    init_db()
+  File "/usr/local/lib/python2.7/site-packages/psiturk/db.py", line 37, in init_db
+    Base.metadata.create_all(bind=engine)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/schema.py", line 2848, in create_all
+    tables=tables)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 1479, in _run_visitor
+    conn._run_visitor(visitorcallable, element, **kwargs)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 1122, in _run_visitor
+    **kwargs).traverse_single(element)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/sql/visitors.py", line 122, in traverse_single
+    return meth(obj, **kw)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/engine/ddl.py", line 70, in visit_metadata
+    self.traverse_single(table, create_ok=True)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/sql/visitors.py", line 122, in traverse_single
+    return meth(obj, **kw)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/engine/ddl.py", line 89, in visit_table
+    self.connection.execute(schema.CreateTable(table))
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 662, in execute
+    params)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 720, in _execute_ddl
+    compiled
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 874, in _execute_context
+    context)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 1024, in _handle_dbapi_exception
+    exc_info
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/util/compat.py", line 196, in raise_from_cause
+    reraise(type(exception), exception, tb=exc_tb)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 867, in _execute_context
+    context)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/engine/default.py", line 324, in do_execute
+    cursor.execute(statement, parameters)
+OperationalError: (OperationalError) table "GoldstoneRevised" already exists u'\nCREATE TABLE "GoldstoneRevised" (\n\tuniqueid VARCHAR(128) NOT NULL, \n\tassignmentid VARCHAR(128) NOT NULL, \n\tworkerid VARCHAR(128) NOT NULL, \n\thitid VARCHAR(128) NOT NULL, \n\tipaddress VARCHAR(128), \n\tbrowser VARCHAR(128), \n\tplatform VARCHAR(128), \n\tlanguage VARCHAR(128), \n\tcond INTEGER, \n\tcounterbalance INTEGER, \n\tcodeversion VARCHAR(128), \n\tbeginhit DATETIME, \n\tbeginexp DATETIME, \n\tendhit DATETIME, \n\tbonus FLOAT, \n\tstatus INTEGER, \n\tmode VARCHAR(128), \n\tdatastring TEXT(4294967295), \n\tPRIMARY KEY (uniqueid)\n)\n\n' ()
+[2018-08-06 19:00:46 -0400] [43850] [CRITICAL] WORKER TIMEOUT (pid:43854)
+[2018-08-06 19:00:50 -0400] [43850] [CRITICAL] WORKER TIMEOUT (pid:43855)
+[2018-08-06 19:00:50 -0400] [43850] [CRITICAL] WORKER TIMEOUT (pid:43856)
+[2018-08-06 19:00:50 -0400] [43850] [CRITICAL] WORKER TIMEOUT (pid:43857)
+[2018-08-06 19:00:50 -0400] [43850] [CRITICAL] WORKER TIMEOUT (pid:43858)
+[2018-08-06 19:00:50 -0400] [43850] [CRITICAL] WORKER TIMEOUT (pid:43859)
+[2018-08-06 19:00:50 -0400] [43850] [CRITICAL] WORKER TIMEOUT (pid:43860)
+[2018-08-06 19:00:50 -0400] [43850] [CRITICAL] WORKER TIMEOUT (pid:43861)
+[2018-08-06 19:00:50 -0400] [43850] [CRITICAL] WORKER TIMEOUT (pid:43862)
+[2018-08-06 21:01:30 -0400] [43850] [CRITICAL] WORKER TIMEOUT (pid:43987)
+[2018-08-06 21:01:34 -0400] [43850] [CRITICAL] WORKER TIMEOUT (pid:43988)
+[2018-08-06 21:01:34 -0400] [43850] [CRITICAL] WORKER TIMEOUT (pid:43990)
+[2018-08-06 21:01:34 -0400] [43850] [CRITICAL] WORKER TIMEOUT (pid:43991)
+[2018-08-06 21:01:34 -0400] [43850] [CRITICAL] WORKER TIMEOUT (pid:43992)
+[2018-08-06 21:01:34 -0400] [43850] [CRITICAL] WORKER TIMEOUT (pid:43993)
+[2018-08-06 21:01:34 -0400] [43850] [CRITICAL] WORKER TIMEOUT (pid:43994)
+[2018-08-06 21:01:34 -0400] [43850] [CRITICAL] WORKER TIMEOUT (pid:43995)
+[2018-08-06 21:01:34 -0400] [43850] [CRITICAL] WORKER TIMEOUT (pid:43996)
+[2018-08-06 23:02:14 -0400] [43850] [CRITICAL] WORKER TIMEOUT (pid:44176)
+[2018-08-06 23:02:14 -0400] [43850] [CRITICAL] WORKER TIMEOUT (pid:44178)
+[2018-08-06 23:02:14 -0400] [43850] [CRITICAL] WORKER TIMEOUT (pid:44179)
+[2018-08-06 23:02:14 -0400] [43850] [CRITICAL] WORKER TIMEOUT (pid:44180)
+[2018-08-06 23:02:14 -0400] [43850] [CRITICAL] WORKER TIMEOUT (pid:44181)
+[2018-08-06 23:02:14 -0400] [43850] [CRITICAL] WORKER TIMEOUT (pid:44182)
+[2018-08-06 23:02:14 -0400] [43850] [CRITICAL] WORKER TIMEOUT (pid:44183)
+[2018-08-06 23:02:14 -0400] [43850] [CRITICAL] WORKER TIMEOUT (pid:44184)
+[2018-08-06 23:02:14 -0400] [43850] [CRITICAL] WORKER TIMEOUT (pid:44185)
+[2018-08-07 01:02:58 -0400] [43850] [CRITICAL] WORKER TIMEOUT (pid:44359)
+[2018-08-07 01:02:58 -0400] [43850] [CRITICAL] WORKER TIMEOUT (pid:44360)
+[2018-08-07 01:02:58 -0400] [43850] [CRITICAL] WORKER TIMEOUT (pid:44362)
+[2018-08-07 01:02:58 -0400] [43850] [CRITICAL] WORKER TIMEOUT (pid:44363)
+[2018-08-07 01:02:58 -0400] [43850] [CRITICAL] WORKER TIMEOUT (pid:44364)
+[2018-08-07 01:02:58 -0400] [43850] [CRITICAL] WORKER TIMEOUT (pid:44365)
+[2018-08-07 01:02:58 -0400] [43850] [CRITICAL] WORKER TIMEOUT (pid:44366)
+[2018-08-07 01:02:58 -0400] [43850] [CRITICAL] WORKER TIMEOUT (pid:44367)
+[2018-08-07 01:02:58 -0400] [43850] [CRITICAL] WORKER TIMEOUT (pid:44368)
+[2018-08-07 03:03:42 -0400] [43850] [CRITICAL] WORKER TIMEOUT (pid:44546)
+[2018-08-07 03:03:42 -0400] [43850] [CRITICAL] WORKER TIMEOUT (pid:44548)
+[2018-08-07 03:03:42 -0400] [43850] [CRITICAL] WORKER TIMEOUT (pid:44550)
+[2018-08-07 03:03:42 -0400] [43850] [CRITICAL] WORKER TIMEOUT (pid:44551)
+[2018-08-07 03:03:42 -0400] [43850] [CRITICAL] WORKER TIMEOUT (pid:44552)
+[2018-08-07 03:03:42 -0400] [43850] [CRITICAL] WORKER TIMEOUT (pid:44553)
+[2018-08-07 03:03:42 -0400] [43850] [CRITICAL] WORKER TIMEOUT (pid:44554)
+[2018-08-07 03:03:42 -0400] [43850] [CRITICAL] WORKER TIMEOUT (pid:44555)
+[2018-08-07 03:03:42 -0400] [43850] [CRITICAL] WORKER TIMEOUT (pid:44557)
+[2018-08-07 05:04:26 -0400] [43850] [CRITICAL] WORKER TIMEOUT (pid:44736)
+[2018-08-07 05:04:30 -0400] [43850] [CRITICAL] WORKER TIMEOUT (pid:44737)
+[2018-08-07 05:04:30 -0400] [43850] [CRITICAL] WORKER TIMEOUT (pid:44738)
+[2018-08-07 05:04:30 -0400] [43850] [CRITICAL] WORKER TIMEOUT (pid:44739)
+[2018-08-07 05:04:30 -0400] [43850] [CRITICAL] WORKER TIMEOUT (pid:44740)
+[2018-08-07 05:04:30 -0400] [43850] [CRITICAL] WORKER TIMEOUT (pid:44731)
+[2018-08-07 05:04:30 -0400] [43850] [CRITICAL] WORKER TIMEOUT (pid:44733)
+[2018-08-07 05:04:30 -0400] [43850] [CRITICAL] WORKER TIMEOUT (pid:44734)
+[2018-08-07 05:04:30 -0400] [43850] [CRITICAL] WORKER TIMEOUT (pid:44735)
+[2018-08-07 07:05:10 -0400] [43850] [CRITICAL] WORKER TIMEOUT (pid:44938)
+[2018-08-07 07:05:10 -0400] [43850] [CRITICAL] WORKER TIMEOUT (pid:44940)
+[2018-08-07 07:05:10 -0400] [43850] [CRITICAL] WORKER TIMEOUT (pid:44942)
+[2018-08-07 07:05:10 -0400] [43850] [CRITICAL] WORKER TIMEOUT (pid:44943)
+[2018-08-07 07:05:10 -0400] [43850] [CRITICAL] WORKER TIMEOUT (pid:44944)
+[2018-08-07 07:05:10 -0400] [43850] [CRITICAL] WORKER TIMEOUT (pid:44946)
+[2018-08-07 07:05:10 -0400] [43850] [CRITICAL] WORKER TIMEOUT (pid:44948)
+[2018-08-07 07:05:10 -0400] [43850] [CRITICAL] WORKER TIMEOUT (pid:44950)
+[2018-08-07 07:05:10 -0400] [43850] [CRITICAL] WORKER TIMEOUT (pid:44951)
+[2018-08-07 09:05:54 -0400] [43850] [CRITICAL] WORKER TIMEOUT (pid:45152)
+[2018-08-07 09:05:54 -0400] [43850] [CRITICAL] WORKER TIMEOUT (pid:45153)
+[2018-08-07 09:05:54 -0400] [43850] [CRITICAL] WORKER TIMEOUT (pid:45145)
+[2018-08-07 09:05:54 -0400] [43850] [CRITICAL] WORKER TIMEOUT (pid:45146)
+[2018-08-07 09:05:54 -0400] [43850] [CRITICAL] WORKER TIMEOUT (pid:45147)
+[2018-08-07 09:05:54 -0400] [43850] [CRITICAL] WORKER TIMEOUT (pid:45148)
+[2018-08-07 09:05:54 -0400] [43850] [CRITICAL] WORKER TIMEOUT (pid:45149)
+[2018-08-07 09:05:54 -0400] [43850] [CRITICAL] WORKER TIMEOUT (pid:45150)
+[2018-08-07 09:05:54 -0400] [43850] [CRITICAL] WORKER TIMEOUT (pid:45151)
+[2018-08-07 09:13:01 -0400] [43850] [CRITICAL] WORKER TIMEOUT (pid:45332)
+[2018-08-07 09:13:01 -0400] [43850] [CRITICAL] WORKER TIMEOUT (pid:45333)
+[2018-08-07 09:13:01 -0400] [43850] [CRITICAL] WORKER TIMEOUT (pid:45334)
+[2018-08-07 09:13:01 -0400] [43850] [CRITICAL] WORKER TIMEOUT (pid:45335)
+[2018-08-07 09:13:01 -0400] [43850] [CRITICAL] WORKER TIMEOUT (pid:45336)
+[2018-08-07 09:13:01 -0400] [43850] [CRITICAL] WORKER TIMEOUT (pid:45338)
+[2018-08-07 09:13:01 -0400] [43850] [CRITICAL] WORKER TIMEOUT (pid:45339)
+[2018-08-07 09:13:01 -0400] [43850] [CRITICAL] WORKER TIMEOUT (pid:45340)
+[2018-08-07 09:13:01 -0400] [43850] [CRITICAL] WORKER TIMEOUT (pid:45341)
+[2018-08-07 12:45:43 -0400] [47729] [CRITICAL] WORKER TIMEOUT (pid:47733)
+[2018-08-07 12:45:46 -0400] [47729] [CRITICAL] WORKER TIMEOUT (pid:47734)
+[2018-08-07 12:45:46 -0400] [47729] [CRITICAL] WORKER TIMEOUT (pid:47735)
+[2018-08-07 12:45:46 -0400] [47729] [CRITICAL] WORKER TIMEOUT (pid:47736)
+[2018-08-07 12:45:46 -0400] [47729] [CRITICAL] WORKER TIMEOUT (pid:47737)
+[2018-08-07 12:45:46 -0400] [47729] [CRITICAL] WORKER TIMEOUT (pid:47738)
+[2018-08-07 12:45:46 -0400] [47729] [CRITICAL] WORKER TIMEOUT (pid:47739)
+[2018-08-07 12:45:46 -0400] [47729] [CRITICAL] WORKER TIMEOUT (pid:47740)
+[2018-08-07 12:45:46 -0400] [47729] [CRITICAL] WORKER TIMEOUT (pid:47741)
+[2018-08-07 13:43:34 -0400] [49140] [CRITICAL] WORKER TIMEOUT (pid:49152)
+[2018-08-07 13:43:34 -0400] [49140] [CRITICAL] WORKER TIMEOUT (pid:49149)
+[2018-08-07 13:43:34 -0400] [49140] [CRITICAL] WORKER TIMEOUT (pid:49150)
+[2018-08-07 15:37:38 -0400] [50586] [ERROR] Error handling request
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/workers/sync.py", line 174, in handle_request
+    resp.write_file(respiter)
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/http/wsgi.py", line 397, in write_file
+    if not self.sendfile(respiter):
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/http/wsgi.py", line 387, in sendfile
+    sent += sendfile(sockno, fileno, offset + sent, count)
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/http/_sendfile.py", line 44, in sendfile
+    raise OSError(e, os.strerror(e))
+OSError: [Errno 32] Broken pipe
+[2018-08-07 15:38:36 -0400] [50582] [ERROR] Error handling request
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/workers/sync.py", line 174, in handle_request
+    resp.write_file(respiter)
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/http/wsgi.py", line 397, in write_file
+    if not self.sendfile(respiter):
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/http/wsgi.py", line 387, in sendfile
+    sent += sendfile(sockno, fileno, offset + sent, count)
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/http/_sendfile.py", line 44, in sendfile
+    raise OSError(e, os.strerror(e))
+OSError: [Errno 32] Broken pipe
+[2018-08-07 15:43:01 -0400] [50583] [ERROR] Error handling request
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/workers/sync.py", line 174, in handle_request
+    resp.write_file(respiter)
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/http/wsgi.py", line 397, in write_file
+    if not self.sendfile(respiter):
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/http/wsgi.py", line 387, in sendfile
+    sent += sendfile(sockno, fileno, offset + sent, count)
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/http/_sendfile.py", line 44, in sendfile
+    raise OSError(e, os.strerror(e))
+OSError: [Errno 32] Broken pipe
+[2018-08-07 15:43:20 -0400] [50585] [ERROR] Error handling request
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/workers/sync.py", line 174, in handle_request
+    resp.write_file(respiter)
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/http/wsgi.py", line 397, in write_file
+    if not self.sendfile(respiter):
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/http/wsgi.py", line 387, in sendfile
+    sent += sendfile(sockno, fileno, offset + sent, count)
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/http/_sendfile.py", line 44, in sendfile
+    raise OSError(e, os.strerror(e))
+OSError: [Errno 32] Broken pipe
+[2018-08-07 15:44:28 -0400] [50578] [CRITICAL] WORKER TIMEOUT (pid:50589)
+[2018-08-07 15:58:11 -0400] [50590] [ERROR] Error handling request
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/workers/sync.py", line 174, in handle_request
+    resp.write_file(respiter)
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/http/wsgi.py", line 397, in write_file
+    if not self.sendfile(respiter):
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/http/wsgi.py", line 387, in sendfile
+    sent += sendfile(sockno, fileno, offset + sent, count)
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/http/_sendfile.py", line 44, in sendfile
+    raise OSError(e, os.strerror(e))
+OSError: [Errno 32] Broken pipe
+[2018-08-07 15:59:12 -0400] [50588] [ERROR] Error handling request
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/workers/sync.py", line 174, in handle_request
+    resp.write_file(respiter)
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/http/wsgi.py", line 397, in write_file
+    if not self.sendfile(respiter):
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/http/wsgi.py", line 387, in sendfile
+    sent += sendfile(sockno, fileno, offset + sent, count)
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/http/_sendfile.py", line 44, in sendfile
+    raise OSError(e, os.strerror(e))
+OSError: [Errno 32] Broken pipe
+[2018-08-07 16:02:08 -0400] [50578] [CRITICAL] WORKER TIMEOUT (pid:50585)
+[2018-08-07 16:04:31 -0400] [50590] [ERROR] Error handling request
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/workers/sync.py", line 174, in handle_request
+    resp.write_file(respiter)
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/http/wsgi.py", line 397, in write_file
+    if not self.sendfile(respiter):
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/http/wsgi.py", line 387, in sendfile
+    sent += sendfile(sockno, fileno, offset + sent, count)
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/http/_sendfile.py", line 44, in sendfile
+    raise OSError(e, os.strerror(e))
+OSError: [Errno 32] Broken pipe
+[2018-08-07 16:05:34 -0400] [50583] [ERROR] Error handling request
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/workers/sync.py", line 174, in handle_request
+    resp.write_file(respiter)
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/http/wsgi.py", line 397, in write_file
+    if not self.sendfile(respiter):
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/http/wsgi.py", line 387, in sendfile
+    sent += sendfile(sockno, fileno, offset + sent, count)
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/http/_sendfile.py", line 44, in sendfile
+    raise OSError(e, os.strerror(e))
+OSError: [Errno 32] Broken pipe
+[2018-08-07 16:06:13 -0400] [50578] [CRITICAL] WORKER TIMEOUT (pid:50588)
+[2018-08-07 16:08:22 -0400] [50578] [CRITICAL] WORKER TIMEOUT (pid:50937)
+[2018-08-07 16:08:22 -0400] [50578] [CRITICAL] WORKER TIMEOUT (pid:51085)
+[2018-08-07 16:08:22 -0400] [50578] [CRITICAL] WORKER TIMEOUT (pid:50582)
+[2018-08-07 16:08:22 -0400] [50578] [CRITICAL] WORKER TIMEOUT (pid:50583)
+[2018-08-07 16:08:22 -0400] [50578] [CRITICAL] WORKER TIMEOUT (pid:50584)
+[2018-08-07 16:08:22 -0400] [50578] [CRITICAL] WORKER TIMEOUT (pid:51097)
+[2018-08-07 16:08:22 -0400] [50578] [CRITICAL] WORKER TIMEOUT (pid:50586)
+[2018-08-07 16:08:22 -0400] [50578] [CRITICAL] WORKER TIMEOUT (pid:50587)
+[2018-08-07 16:08:22 -0400] [50578] [CRITICAL] WORKER TIMEOUT (pid:50590)
+[2018-08-07 16:08:48,647] ERROR in experiment: already_started_exp (1008) {'assignmentId': [u'324G5B4FB385YLQIXTLUGN2BEB570B'], 'workerId': [u'A3F51C49T9A34D'], 'hitId': [u'35ZRNT9RUIY6DZJL70FD5NRWM38O3K'], 'mode': [u'live']}
+[2018-08-07 16:11:52 -0400] [51111] [ERROR] Error handling request
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/workers/sync.py", line 174, in handle_request
+    resp.write_file(respiter)
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/http/wsgi.py", line 397, in write_file
+    if not self.sendfile(respiter):
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/http/wsgi.py", line 387, in sendfile
+    sent += sendfile(sockno, fileno, offset + sent, count)
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/http/_sendfile.py", line 44, in sendfile
+    raise OSError(e, os.strerror(e))
+OSError: [Errno 32] Broken pipe
+[2018-08-07 16:12:32 -0400] [51111] [ERROR] Error handling request
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/workers/sync.py", line 174, in handle_request
+    resp.write_file(respiter)
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/http/wsgi.py", line 397, in write_file
+    if not self.sendfile(respiter):
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/http/wsgi.py", line 387, in sendfile
+    sent += sendfile(sockno, fileno, offset + sent, count)
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/http/_sendfile.py", line 44, in sendfile
+    raise OSError(e, os.strerror(e))
+OSError: [Errno 32] Broken pipe
+[2018-08-07 16:17:20 -0400] [50578] [CRITICAL] WORKER TIMEOUT (pid:51110)
+[2018-08-07 16:17:51 -0400] [51109] [ERROR] Error handling request
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/workers/sync.py", line 174, in handle_request
+    resp.write_file(respiter)
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/http/wsgi.py", line 397, in write_file
+    if not self.sendfile(respiter):
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/http/wsgi.py", line 387, in sendfile
+    sent += sendfile(sockno, fileno, offset + sent, count)
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/http/_sendfile.py", line 44, in sendfile
+    raise OSError(e, os.strerror(e))
+OSError: [Errno 32] Broken pipe
+[2018-08-07 16:18:04 -0400] [50578] [CRITICAL] WORKER TIMEOUT (pid:51111)
+[2018-08-07 16:18:04 -0400] [50578] [CRITICAL] WORKER TIMEOUT (pid:51103)
+[2018-08-07 16:18:32 -0400] [51107] [ERROR] Error handling request
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/workers/sync.py", line 174, in handle_request
+    resp.write_file(respiter)
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/http/wsgi.py", line 397, in write_file
+    if not self.sendfile(respiter):
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/http/wsgi.py", line 387, in sendfile
+    sent += sendfile(sockno, fileno, offset + sent, count)
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/http/_sendfile.py", line 44, in sendfile
+    raise OSError(e, os.strerror(e))
+OSError: [Errno 32] Broken pipe
+[2018-08-07 16:20:59 -0400] [50578] [CRITICAL] WORKER TIMEOUT (pid:51105)
+[2018-08-07 16:22:43 -0400] [50578] [CRITICAL] WORKER TIMEOUT (pid:51108)
+[2018-08-07 16:24:28 -0400] [51104] [ERROR] Error handling request
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/workers/sync.py", line 174, in handle_request
+    resp.write_file(respiter)
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/http/wsgi.py", line 397, in write_file
+    if not self.sendfile(respiter):
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/http/wsgi.py", line 387, in sendfile
+    sent += sendfile(sockno, fileno, offset + sent, count)
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/http/_sendfile.py", line 44, in sendfile
+    raise OSError(e, os.strerror(e))
+OSError: [Errno 32] Broken pipe
+[2018-08-07 16:27:18 -0400] [51107] [ERROR] Error handling request
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/workers/sync.py", line 174, in handle_request
+    resp.write_file(respiter)
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/http/wsgi.py", line 397, in write_file
+    if not self.sendfile(respiter):
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/http/wsgi.py", line 387, in sendfile
+    sent += sendfile(sockno, fileno, offset + sent, count)
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/http/_sendfile.py", line 44, in sendfile
+    raise OSError(e, os.strerror(e))
+OSError: [Errno 32] Broken pipe
+[2018-08-07 16:27:21 -0400] [51373] [ERROR] Error handling request
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/workers/sync.py", line 174, in handle_request
+    resp.write_file(respiter)
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/http/wsgi.py", line 397, in write_file
+    if not self.sendfile(respiter):
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/http/wsgi.py", line 387, in sendfile
+    sent += sendfile(sockno, fileno, offset + sent, count)
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/http/_sendfile.py", line 44, in sendfile
+    raise OSError(e, os.strerror(e))
+OSError: [Errno 32] Broken pipe
+[2018-08-07 16:27:36 -0400] [50578] [CRITICAL] WORKER TIMEOUT (pid:51445)
+[2018-08-07 16:27:40 -0400] [50578] [CRITICAL] WORKER TIMEOUT (pid:51104)
+[2018-08-07 16:27:46 -0400] [51106] [ERROR] Error handling request
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/workers/sync.py", line 174, in handle_request
+    resp.write_file(respiter)
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/http/wsgi.py", line 397, in write_file
+    if not self.sendfile(respiter):
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/http/wsgi.py", line 387, in sendfile
+    sent += sendfile(sockno, fileno, offset + sent, count)
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/http/_sendfile.py", line 44, in sendfile
+    raise OSError(e, os.strerror(e))
+OSError: [Errno 32] Broken pipe
+[2018-08-07 16:28:40 -0400] [50578] [CRITICAL] WORKER TIMEOUT (pid:51107)
+[2018-08-07 16:29:22 -0400] [50578] [CRITICAL] WORKER TIMEOUT (pid:51509)
+[2018-08-07 16:29:30 -0400] [50578] [CRITICAL] WORKER TIMEOUT (pid:51106)
+[2018-08-07 16:30:17 -0400] [50578] [CRITICAL] WORKER TIMEOUT (pid:51528)
+[2018-08-07 16:32:37 -0400] [50578] [CRITICAL] WORKER TIMEOUT (pid:51373)
+[2018-08-07 16:33:46 -0400] [50578] [CRITICAL] WORKER TIMEOUT (pid:51430)
+[2018-08-07 16:34:25 -0400] [50578] [CRITICAL] WORKER TIMEOUT (pid:51544)
+[2018-08-07 16:35:23 -0400] [50578] [CRITICAL] WORKER TIMEOUT (pid:51109)
+[2018-08-07 16:35:25 -0400] [50578] [CRITICAL] WORKER TIMEOUT (pid:51532)
+[2018-08-07 16:51:03 -0400] [50578] [CRITICAL] WORKER TIMEOUT (pid:51533)
+[2018-08-07 16:51:03 -0400] [50578] [CRITICAL] WORKER TIMEOUT (pid:51537)
+[2018-08-07 16:51:03 -0400] [50578] [CRITICAL] WORKER TIMEOUT (pid:51548)
+[2018-08-07 16:51:03 -0400] [50578] [CRITICAL] WORKER TIMEOUT (pid:51557)
+[2018-08-07 16:51:03 -0400] [50578] [CRITICAL] WORKER TIMEOUT (pid:51558)
+[2018-08-07 16:51:03 -0400] [50578] [CRITICAL] WORKER TIMEOUT (pid:51431)
+[2018-08-07 16:51:03 -0400] [50578] [CRITICAL] WORKER TIMEOUT (pid:51441)
+[2018-08-07 17:06:49 -0400] [51849] [ERROR] Error handling request
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/workers/sync.py", line 174, in handle_request
+    resp.write_file(respiter)
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/http/wsgi.py", line 397, in write_file
+    if not self.sendfile(respiter):
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/http/wsgi.py", line 387, in sendfile
+    sent += sendfile(sockno, fileno, offset + sent, count)
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/http/_sendfile.py", line 44, in sendfile
+    raise OSError(e, os.strerror(e))
+OSError: [Errno 32] Broken pipe
+[2018-08-07 17:15:45 -0400] [51508] [ERROR] Error handling request
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/workers/sync.py", line 174, in handle_request
+    resp.write_file(respiter)
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/http/wsgi.py", line 397, in write_file
+    if not self.sendfile(respiter):
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/http/wsgi.py", line 387, in sendfile
+    sent += sendfile(sockno, fileno, offset + sent, count)
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/http/_sendfile.py", line 44, in sendfile
+    raise OSError(e, os.strerror(e))
+OSError: [Errno 32] Broken pipe
+[2018-08-07 17:16:24 -0400] [51847] [ERROR] Error handling request
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/workers/sync.py", line 174, in handle_request
+    resp.write_file(respiter)
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/http/wsgi.py", line 397, in write_file
+    if not self.sendfile(respiter):
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/http/wsgi.py", line 387, in sendfile
+    sent += sendfile(sockno, fileno, offset + sent, count)
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/http/_sendfile.py", line 44, in sendfile
+    raise OSError(e, os.strerror(e))
+OSError: [Errno 32] Broken pipe
+[2018-08-07 17:23:01 -0400] [51850] [ERROR] Error handling request
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/workers/sync.py", line 174, in handle_request
+    resp.write_file(respiter)
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/http/wsgi.py", line 397, in write_file
+    if not self.sendfile(respiter):
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/http/wsgi.py", line 387, in sendfile
+    sent += sendfile(sockno, fileno, offset + sent, count)
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/http/_sendfile.py", line 44, in sendfile
+    raise OSError(e, os.strerror(e))
+OSError: [Errno 32] Broken pipe
+[2018-08-07 17:28:44 -0400] [51849] [ERROR] Error handling request
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/workers/sync.py", line 174, in handle_request
+    resp.write_file(respiter)
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/http/wsgi.py", line 397, in write_file
+    if not self.sendfile(respiter):
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/http/wsgi.py", line 387, in sendfile
+    sent += sendfile(sockno, fileno, offset + sent, count)
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/http/_sendfile.py", line 44, in sendfile
+    raise OSError(e, os.strerror(e))
+OSError: [Errno 32] Broken pipe
+[2018-08-07 17:41:18,462] ERROR in experiment: already_started_exp (1008) {'assignmentId': [u'3M0BCWMB8VWL8NUT3HQVSKXBY8KWB1'], 'workerId': [u'A272X64FOZFYLB'], 'hitId': [u'3T6SSHJUZFAB7GQ1U89VPWXZTCVII8'], 'mode': [u'live']}
+[2018-08-07 18:05:37 -0400] [51846] [ERROR] Error handling request
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/workers/sync.py", line 174, in handle_request
+    resp.write_file(respiter)
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/http/wsgi.py", line 397, in write_file
+    if not self.sendfile(respiter):
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/http/wsgi.py", line 387, in sendfile
+    sent += sendfile(sockno, fileno, offset + sent, count)
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/http/_sendfile.py", line 44, in sendfile
+    raise OSError(e, os.strerror(e))
+OSError: [Errno 32] Broken pipe
+[2018-08-07 18:05:42 -0400] [51847] [ERROR] Error handling request
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/workers/sync.py", line 174, in handle_request
+    resp.write_file(respiter)
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/http/wsgi.py", line 397, in write_file
+    if not self.sendfile(respiter):
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/http/wsgi.py", line 387, in sendfile
+    sent += sendfile(sockno, fileno, offset + sent, count)
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/http/_sendfile.py", line 44, in sendfile
+    raise OSError(e, os.strerror(e))
+OSError: [Errno 32] Broken pipe
+[2018-08-07 21:55:11 -0400] [50578] [CRITICAL] WORKER TIMEOUT (pid:51846)
+[2018-08-07 21:55:11 -0400] [50578] [CRITICAL] WORKER TIMEOUT (pid:51847)
+[2018-08-07 21:55:11 -0400] [50578] [CRITICAL] WORKER TIMEOUT (pid:51848)
+[2018-08-07 21:55:11 -0400] [50578] [CRITICAL] WORKER TIMEOUT (pid:51849)
+[2018-08-07 21:55:11 -0400] [50578] [CRITICAL] WORKER TIMEOUT (pid:51850)
+[2018-08-07 21:55:11 -0400] [50578] [CRITICAL] WORKER TIMEOUT (pid:51851)
+[2018-08-07 21:55:11 -0400] [50578] [CRITICAL] WORKER TIMEOUT (pid:51852)
+[2018-08-07 21:55:11 -0400] [50578] [CRITICAL] WORKER TIMEOUT (pid:51554)
+[2018-08-07 21:55:11 -0400] [50578] [CRITICAL] WORKER TIMEOUT (pid:51508)
+[2018-08-07 23:55:53 -0400] [50578] [CRITICAL] WORKER TIMEOUT (pid:53835)
+[2018-08-07 23:55:53 -0400] [50578] [CRITICAL] WORKER TIMEOUT (pid:53837)
+[2018-08-07 23:55:53 -0400] [50578] [CRITICAL] WORKER TIMEOUT (pid:53838)
+[2018-08-07 23:55:53 -0400] [50578] [CRITICAL] WORKER TIMEOUT (pid:53839)
+[2018-08-07 23:55:53 -0400] [50578] [CRITICAL] WORKER TIMEOUT (pid:53841)
+[2018-08-07 23:55:53 -0400] [50578] [CRITICAL] WORKER TIMEOUT (pid:53842)
+[2018-08-07 23:55:53 -0400] [50578] [CRITICAL] WORKER TIMEOUT (pid:53843)
+[2018-08-07 23:55:53 -0400] [50578] [CRITICAL] WORKER TIMEOUT (pid:53844)
+[2018-08-07 23:55:53 -0400] [50578] [CRITICAL] WORKER TIMEOUT (pid:53834)
+[2018-08-08 01:56:35 -0400] [50578] [CRITICAL] WORKER TIMEOUT (pid:54040)
+[2018-08-08 01:56:35 -0400] [50578] [CRITICAL] WORKER TIMEOUT (pid:54041)
+[2018-08-08 01:56:35 -0400] [50578] [CRITICAL] WORKER TIMEOUT (pid:54042)
+[2018-08-08 01:56:35 -0400] [50578] [CRITICAL] WORKER TIMEOUT (pid:54044)
+[2018-08-08 01:56:35 -0400] [50578] [CRITICAL] WORKER TIMEOUT (pid:54045)
+[2018-08-08 01:56:35 -0400] [50578] [CRITICAL] WORKER TIMEOUT (pid:54046)
+[2018-08-08 01:56:35 -0400] [50578] [CRITICAL] WORKER TIMEOUT (pid:54047)
+[2018-08-08 01:56:35 -0400] [50578] [CRITICAL] WORKER TIMEOUT (pid:54048)
+[2018-08-08 01:56:35 -0400] [50578] [CRITICAL] WORKER TIMEOUT (pid:54049)
+[2018-08-08 03:57:17 -0400] [50578] [CRITICAL] WORKER TIMEOUT (pid:54228)
+[2018-08-08 03:57:17 -0400] [50578] [CRITICAL] WORKER TIMEOUT (pid:54231)
+[2018-08-08 03:57:17 -0400] [50578] [CRITICAL] WORKER TIMEOUT (pid:54233)
+[2018-08-08 03:57:17 -0400] [50578] [CRITICAL] WORKER TIMEOUT (pid:54234)
+[2018-08-08 03:57:17 -0400] [50578] [CRITICAL] WORKER TIMEOUT (pid:54235)
+[2018-08-08 03:57:17 -0400] [50578] [CRITICAL] WORKER TIMEOUT (pid:54236)
+[2018-08-08 03:57:17 -0400] [50578] [CRITICAL] WORKER TIMEOUT (pid:54238)
+[2018-08-08 03:57:17 -0400] [50578] [CRITICAL] WORKER TIMEOUT (pid:54239)
+[2018-08-08 03:57:17 -0400] [50578] [CRITICAL] WORKER TIMEOUT (pid:54241)
+[2018-08-08 05:57:59 -0400] [50578] [CRITICAL] WORKER TIMEOUT (pid:54477)
+[2018-08-08 05:57:59 -0400] [50578] [CRITICAL] WORKER TIMEOUT (pid:54479)
+[2018-08-08 05:57:59 -0400] [50578] [CRITICAL] WORKER TIMEOUT (pid:54482)
+[2018-08-08 05:57:59 -0400] [50578] [CRITICAL] WORKER TIMEOUT (pid:54483)
+[2018-08-08 05:57:59 -0400] [50578] [CRITICAL] WORKER TIMEOUT (pid:54486)
+[2018-08-08 05:57:59 -0400] [50578] [CRITICAL] WORKER TIMEOUT (pid:54487)
+[2018-08-08 05:57:59 -0400] [50578] [CRITICAL] WORKER TIMEOUT (pid:54489)
+[2018-08-08 05:57:59 -0400] [50578] [CRITICAL] WORKER TIMEOUT (pid:54490)
+[2018-08-08 05:57:59 -0400] [50578] [CRITICAL] WORKER TIMEOUT (pid:54492)
+[2018-08-08 07:58:41 -0400] [50578] [CRITICAL] WORKER TIMEOUT (pid:54633)
+[2018-08-08 07:58:41 -0400] [50578] [CRITICAL] WORKER TIMEOUT (pid:54634)
+[2018-08-08 07:58:41 -0400] [50578] [CRITICAL] WORKER TIMEOUT (pid:54636)
+[2018-08-08 07:58:41 -0400] [50578] [CRITICAL] WORKER TIMEOUT (pid:54637)
+[2018-08-08 07:58:41 -0400] [50578] [CRITICAL] WORKER TIMEOUT (pid:54638)
+[2018-08-08 07:58:41 -0400] [50578] [CRITICAL] WORKER TIMEOUT (pid:54639)
+[2018-08-08 07:58:41 -0400] [50578] [CRITICAL] WORKER TIMEOUT (pid:54640)
+[2018-08-08 07:58:41 -0400] [50578] [CRITICAL] WORKER TIMEOUT (pid:54641)
+[2018-08-08 07:58:41 -0400] [50578] [CRITICAL] WORKER TIMEOUT (pid:54642)
+[2018-08-08 09:14:15 -0400] [50578] [CRITICAL] WORKER TIMEOUT (pid:54819)
+[2018-08-08 09:14:15 -0400] [50578] [CRITICAL] WORKER TIMEOUT (pid:54820)
+[2018-08-08 09:14:15 -0400] [50578] [CRITICAL] WORKER TIMEOUT (pid:54821)
+[2018-08-08 09:14:15 -0400] [50578] [CRITICAL] WORKER TIMEOUT (pid:54823)
+[2018-08-08 09:14:15 -0400] [50578] [CRITICAL] WORKER TIMEOUT (pid:54824)
+[2018-08-08 09:14:15 -0400] [50578] [CRITICAL] WORKER TIMEOUT (pid:54825)
+[2018-08-08 09:14:15 -0400] [50578] [CRITICAL] WORKER TIMEOUT (pid:54826)
+[2018-08-08 09:14:15 -0400] [50578] [CRITICAL] WORKER TIMEOUT (pid:54827)
+[2018-08-08 09:14:15 -0400] [50578] [CRITICAL] WORKER TIMEOUT (pid:54828)
+[2018-08-08 09:22:43 -0400] [55009] [ERROR] Error handling request
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/workers/sync.py", line 174, in handle_request
+    resp.write_file(respiter)
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/http/wsgi.py", line 397, in write_file
+    if not self.sendfile(respiter):
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/http/wsgi.py", line 387, in sendfile
+    sent += sendfile(sockno, fileno, offset + sent, count)
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/http/_sendfile.py", line 44, in sendfile
+    raise OSError(e, os.strerror(e))
+OSError: [Errno 32] Broken pipe
+[2018-08-08 09:28:41 -0400] [55012] [ERROR] Error handling request
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/workers/sync.py", line 174, in handle_request
+    resp.write_file(respiter)
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/http/wsgi.py", line 397, in write_file
+    if not self.sendfile(respiter):
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/http/wsgi.py", line 387, in sendfile
+    sent += sendfile(sockno, fileno, offset + sent, count)
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/http/_sendfile.py", line 44, in sendfile
+    raise OSError(e, os.strerror(e))
+OSError: [Errno 32] Broken pipe
+[2018-08-08 09:38:58,584] ERROR in experiment: already_started_exp (1008) {'assignmentId': [u'3K4J6M3CXETKSRZ1IYMHB6RHM7BAGX'], 'workerId': [u'ACBTEQQUWAFSK'], 'hitId': [u'39HYCOOPKOLGVO06N96CQSO3IODDM3'], 'mode': [u'live']}
+[2018-08-08 09:49:54,704] ERROR in experiment: already_did_exp_hit (1010) {'assignmentId': [u'3DBQWDE4Y6YTWD46A68VTFKSV505NY'], 'workerId': [u'A7GU4R9GA16C6'], 'hitId': [u'3V7ICJJAZAG7C1DG39FA98J3TCGB4Z'], 'mode': [u'live']}
+[2018-08-08 09:50:05,738] ERROR in experiment: already_did_exp_hit (1010) {'assignmentId': [u'3DBQWDE4Y6YTWD46A68VTFKSV505NY'], 'workerId': [u'A7GU4R9GA16C6'], 'hitId': [u'3V7ICJJAZAG7C1DG39FA98J3TCGB4Z'], 'mode': [u'live']}
+[2018-08-08 09:50:21,109] ERROR in experiment: already_did_exp_hit (1010) {'assignmentId': [u'3DBQWDE4Y6YTWD46A68VTFKSV505NY'], 'workerId': [u'A7GU4R9GA16C6'], 'hitId': [u'3V7ICJJAZAG7C1DG39FA98J3TCGB4Z'], 'mode': [u'live']}
+[2018-08-08 10:00:29 -0400] [55015] [ERROR] Error handling request
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/workers/sync.py", line 174, in handle_request
+    resp.write_file(respiter)
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/http/wsgi.py", line 397, in write_file
+    if not self.sendfile(respiter):
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/http/wsgi.py", line 387, in sendfile
+    sent += sendfile(sockno, fileno, offset + sent, count)
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/http/_sendfile.py", line 44, in sendfile
+    raise OSError(e, os.strerror(e))
+OSError: [Errno 32] Broken pipe
+[2018-08-08 10:05:39 -0400] [55010] [ERROR] Error handling request
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/workers/sync.py", line 174, in handle_request
+    resp.write_file(respiter)
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/http/wsgi.py", line 397, in write_file
+    if not self.sendfile(respiter):
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/http/wsgi.py", line 387, in sendfile
+    sent += sendfile(sockno, fileno, offset + sent, count)
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/http/_sendfile.py", line 44, in sendfile
+    raise OSError(e, os.strerror(e))
+OSError: [Errno 32] Broken pipe
+[2018-08-08 10:14:11 -0400] [55012] [ERROR] Error handling request
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/workers/sync.py", line 174, in handle_request
+    resp.write_file(respiter)
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/http/wsgi.py", line 397, in write_file
+    if not self.sendfile(respiter):
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/http/wsgi.py", line 387, in sendfile
+    sent += sendfile(sockno, fileno, offset + sent, count)
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/http/_sendfile.py", line 44, in sendfile
+    raise OSError(e, os.strerror(e))
+OSError: [Errno 32] Broken pipe
+[2018-08-08 10:17:03 -0400] [55009] [ERROR] Error handling request
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/workers/sync.py", line 174, in handle_request
+    resp.write_file(respiter)
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/http/wsgi.py", line 397, in write_file
+    if not self.sendfile(respiter):
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/http/wsgi.py", line 387, in sendfile
+    sent += sendfile(sockno, fileno, offset + sent, count)
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/http/_sendfile.py", line 44, in sendfile
+    raise OSError(e, os.strerror(e))
+OSError: [Errno 32] Broken pipe
+[2018-08-08 10:24:49,900] ERROR in experiment: already_started_exp (1008) {'assignmentId': [u'3ZPBJO59KP1WQUXOMEV1M7BOMAPHD9'], 'workerId': [u'A2WFP64NPSB2EO'], 'hitId': [u'39HYCOOPKOLGVO06N96CQSO3IODDM3'], 'mode': [u'live']}
+[2018-08-08 10:33:37 -0400] [55008] [ERROR] Error handling request
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/workers/sync.py", line 174, in handle_request
+    resp.write_file(respiter)
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/http/wsgi.py", line 397, in write_file
+    if not self.sendfile(respiter):
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/http/wsgi.py", line 387, in sendfile
+    sent += sendfile(sockno, fileno, offset + sent, count)
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/http/_sendfile.py", line 44, in sendfile
+    raise OSError(e, os.strerror(e))
+OSError: [Errno 32] Broken pipe
+[2018-08-08 11:03:26 -0400] [55015] [ERROR] Error handling request
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/workers/sync.py", line 174, in handle_request
+    resp.write_file(respiter)
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/http/wsgi.py", line 397, in write_file
+    if not self.sendfile(respiter):
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/http/wsgi.py", line 387, in sendfile
+    sent += sendfile(sockno, fileno, offset + sent, count)
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/http/_sendfile.py", line 44, in sendfile
+    raise OSError(e, os.strerror(e))
+OSError: [Errno 32] Broken pipe
+[2018-08-08 11:13:09 -0400] [55009] [ERROR] Error handling request
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/workers/sync.py", line 174, in handle_request
+    resp.write_file(respiter)
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/http/wsgi.py", line 397, in write_file
+    if not self.sendfile(respiter):
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/http/wsgi.py", line 387, in sendfile
+    sent += sendfile(sockno, fileno, offset + sent, count)
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/http/_sendfile.py", line 44, in sendfile
+    raise OSError(e, os.strerror(e))
+OSError: [Errno 32] Broken pipe
+[2018-08-08 11:15:36 -0400] [55007] [ERROR] Error handling request
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/workers/sync.py", line 174, in handle_request
+    resp.write_file(respiter)
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/http/wsgi.py", line 397, in write_file
+    if not self.sendfile(respiter):
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/http/wsgi.py", line 387, in sendfile
+    sent += sendfile(sockno, fileno, offset + sent, count)
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/http/_sendfile.py", line 44, in sendfile
+    raise OSError(e, os.strerror(e))
+OSError: [Errno 32] Broken pipe
+[2018-08-08 11:16:08 -0400] [55007] [ERROR] Error handling request
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/workers/sync.py", line 174, in handle_request
+    resp.write_file(respiter)
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/http/wsgi.py", line 397, in write_file
+    if not self.sendfile(respiter):
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/http/wsgi.py", line 387, in sendfile
+    sent += sendfile(sockno, fileno, offset + sent, count)
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/http/_sendfile.py", line 44, in sendfile
+    raise OSError(e, os.strerror(e))
+OSError: [Errno 32] Broken pipe
+[2018-08-08 11:22:19,370] ERROR in experiment: already_did_exp_hit (1010) {'assignmentId': [u'3YJ6NA41JBG16XV4FNPHYE8SDLKPJO'], 'workerId': [u'A1LQKMSG4GT8N'], 'hitId': [u'3XQ4XW3OD9CWQ9FVAHIH6IW5DN62SX'], 'mode': [u'live']}
+[2018-08-08 11:30:09 -0400] [55011] [ERROR] Error handling request
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/workers/sync.py", line 174, in handle_request
+    resp.write_file(respiter)
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/http/wsgi.py", line 397, in write_file
+    if not self.sendfile(respiter):
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/http/wsgi.py", line 387, in sendfile
+    sent += sendfile(sockno, fileno, offset + sent, count)
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/http/_sendfile.py", line 44, in sendfile
+    raise OSError(e, os.strerror(e))
+OSError: [Errno 32] Broken pipe
+[2018-08-08 11:30:17,564] ERROR in experiment: already_did_exp_hit (1010) {'assignmentId': [u'33FBRBDW6OZTSRQHJE6KPO07YRDC8F'], 'workerId': [u'A1JGA15NKUP0BB'], 'hitId': [u'3XQ4XW3OD9CWQ9FVAHIH6IW5DN62SX'], 'mode': [u'live']}
+[2018-08-08 11:46:31,219] ERROR in experiment: already_did_exp_hit (1010) {'assignmentId': [u'3YDGXNSEOZUQXND2QZ026QOJ6F2846'], 'workerId': [u'ADGH08WUP68ZF'], 'hitId': [u'39HYCOOPKOLGVO06N96CQSO3IODDM3'], 'mode': [u'live']}
+[2018-08-08 13:00:11 -0400] [55008] [ERROR] Error handling request
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/workers/sync.py", line 174, in handle_request
+    resp.write_file(respiter)
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/http/wsgi.py", line 397, in write_file
+    if not self.sendfile(respiter):
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/http/wsgi.py", line 387, in sendfile
+    sent += sendfile(sockno, fileno, offset + sent, count)
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/http/_sendfile.py", line 44, in sendfile
+    raise OSError(e, os.strerror(e))
+OSError: [Errno 32] Broken pipe
+[2018-08-08 13:00:20 -0400] [55011] [ERROR] Error handling request
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/workers/sync.py", line 174, in handle_request
+    resp.write_file(respiter)
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/http/wsgi.py", line 397, in write_file
+    if not self.sendfile(respiter):
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/http/wsgi.py", line 387, in sendfile
+    sent += sendfile(sockno, fileno, offset + sent, count)
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/http/_sendfile.py", line 44, in sendfile
+    raise OSError(e, os.strerror(e))
+OSError: [Errno 32] Broken pipe
+[2018-08-08 13:07:08,176] ERROR in experiment: already_did_exp_hit (1010) {'assignmentId': [u'3YZ8UPK3VTMRQOXUMH7PLGIWVJ5CUX'], 'workerId': [u'A321YWMP74ULKH'], 'hitId': [u'3XQ4XW3OD9CWQ9FVAHIH6IW5DN62SX'], 'mode': [u'live']}
+[2018-08-08 13:30:55 -0400] [55013] [ERROR] Error handling request
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/workers/sync.py", line 174, in handle_request
+    resp.write_file(respiter)
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/http/wsgi.py", line 397, in write_file
+    if not self.sendfile(respiter):
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/http/wsgi.py", line 387, in sendfile
+    sent += sendfile(sockno, fileno, offset + sent, count)
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/http/_sendfile.py", line 44, in sendfile
+    raise OSError(e, os.strerror(e))
+OSError: [Errno 32] Broken pipe
+[2018-08-08 13:30:57 -0400] [55015] [ERROR] Error handling request
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/workers/sync.py", line 174, in handle_request
+    resp.write_file(respiter)
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/http/wsgi.py", line 397, in write_file
+    if not self.sendfile(respiter):
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/http/wsgi.py", line 387, in sendfile
+    sent += sendfile(sockno, fileno, offset + sent, count)
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/http/_sendfile.py", line 44, in sendfile
+    raise OSError(e, os.strerror(e))
+OSError: [Errno 32] Broken pipe
+[2018-08-08 13:31:28 -0400] [50578] [CRITICAL] WORKER TIMEOUT (pid:55013)
+[2018-08-08 13:31:28,236] ERROR in experiment: api_server_not_reachable (1015) {'assignmentId': [u'3L4PIM1GQTGCDZ6IEFU9DWNVR9YYR4'], 'workerId': [u'A2Y9ZNZ0F24GHB'], 'hitId': [u'3ZFRE2BDQ9EUS146TYXIS1N4DD0XZ5'], 'mode': [u'live']}
+[2018-08-08 13:34:19,365] ERROR in experiment: already_did_exp_hit (1010) {'assignmentId': [u'3RSDURM96AMN4V1DS9A9EPOCCK8EY7'], 'workerId': [u'A2W3I2GBGDB637'], 'hitId': [u'3ZFRE2BDQ9EUS146TYXIS1N4DD0XZ5'], 'mode': [u'live']}
+[2018-08-08 13:36:59 -0400] [55010] [ERROR] Error handling request
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/workers/sync.py", line 174, in handle_request
+    resp.write_file(respiter)
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/http/wsgi.py", line 397, in write_file
+    if not self.sendfile(respiter):
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/http/wsgi.py", line 387, in sendfile
+    sent += sendfile(sockno, fileno, offset + sent, count)
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/http/_sendfile.py", line 44, in sendfile
+    raise OSError(e, os.strerror(e))
+OSError: [Errno 32] Broken pipe
+[2018-08-08 13:39:40 -0400] [55011] [ERROR] Error handling request
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/workers/sync.py", line 174, in handle_request
+    resp.write_file(respiter)
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/http/wsgi.py", line 397, in write_file
+    if not self.sendfile(respiter):
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/http/wsgi.py", line 387, in sendfile
+    sent += sendfile(sockno, fileno, offset + sent, count)
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/http/_sendfile.py", line 44, in sendfile
+    raise OSError(e, os.strerror(e))
+OSError: [Errno 32] Broken pipe
+[2018-08-08 13:51:05 -0400] [58204] [ERROR] Error handling request
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/workers/sync.py", line 174, in handle_request
+    resp.write_file(respiter)
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/http/wsgi.py", line 397, in write_file
+    if not self.sendfile(respiter):
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/http/wsgi.py", line 387, in sendfile
+    sent += sendfile(sockno, fileno, offset + sent, count)
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/http/_sendfile.py", line 44, in sendfile
+    raise OSError(e, os.strerror(e))
+OSError: [Errno 32] Broken pipe
+[2018-08-08 13:51:13 -0400] [55014] [ERROR] Error handling request
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/workers/sync.py", line 174, in handle_request
+    resp.write_file(respiter)
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/http/wsgi.py", line 397, in write_file
+    if not self.sendfile(respiter):
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/http/wsgi.py", line 387, in sendfile
+    sent += sendfile(sockno, fileno, offset + sent, count)
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/http/_sendfile.py", line 44, in sendfile
+    raise OSError(e, os.strerror(e))
+OSError: [Errno 32] Broken pipe
+[2018-08-08 13:54:31,335] ERROR in experiment: already_did_exp_hit (1010) {'assignmentId': [u'3K4J6M3CXETKSRZ1IYMHB6RHM9TAGJ'], 'workerId': [u'A3VTW0XT1KY8GD'], 'hitId': [u'3ZFRE2BDQ9EUS146TYXIS1N4DD0XZ5'], 'mode': [u'live']}
+[2018-08-08 13:58:54 -0400] [50578] [CRITICAL] WORKER TIMEOUT (pid:55008)
+[2018-08-08 14:02:50 -0400] [50578] [CRITICAL] WORKER TIMEOUT (pid:55011)
+[2018-08-08 14:21:43 -0400] [55014] [ERROR] Error handling request
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/workers/sync.py", line 174, in handle_request
+    resp.write_file(respiter)
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/http/wsgi.py", line 397, in write_file
+    if not self.sendfile(respiter):
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/http/wsgi.py", line 387, in sendfile
+    sent += sendfile(sockno, fileno, offset + sent, count)
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/http/_sendfile.py", line 44, in sendfile
+    raise OSError(e, os.strerror(e))
+OSError: [Errno 32] Broken pipe
+[2018-08-08 15:44:29 -0400] [50578] [CRITICAL] WORKER TIMEOUT (pid:55010)
+[2018-08-08 15:54:59,569] ERROR in experiment: already_did_exp_hit (1010) {'assignmentId': [u'32VNZTT0A74WFSSYP862X7JOW96R4L'], 'workerId': [u'A28LPPFS7FW2SD'], 'hitId': [u'3ZFRE2BDQ9EUS146TYXIS1N4DD0XZ5'], 'mode': [u'live']}
+[2018-08-08 15:55:05,942] ERROR in experiment: already_did_exp_hit (1010) {'assignmentId': [u'32VNZTT0A74WFSSYP862X7JOW96R4L'], 'workerId': [u'A28LPPFS7FW2SD'], 'hitId': [u'3ZFRE2BDQ9EUS146TYXIS1N4DD0XZ5'], 'mode': [u'live']}
+[2018-08-08 15:55:08,080] ERROR in experiment: already_did_exp_hit (1010) {'assignmentId': [u'32VNZTT0A74WFSSYP862X7JOW96R4L'], 'workerId': [u'A28LPPFS7FW2SD'], 'hitId': [u'3ZFRE2BDQ9EUS146TYXIS1N4DD0XZ5'], 'mode': [u'live']}
+[2018-08-08 15:55:09,011] ERROR in experiment: already_did_exp_hit (1010) {'assignmentId': [u'32VNZTT0A74WFSSYP862X7JOW96R4L'], 'workerId': [u'A28LPPFS7FW2SD'], 'hitId': [u'3ZFRE2BDQ9EUS146TYXIS1N4DD0XZ5'], 'mode': [u'live']}
+[2018-08-08 15:55:09,384] ERROR in experiment: already_did_exp_hit (1010) {'assignmentId': [u'32VNZTT0A74WFSSYP862X7JOW96R4L'], 'workerId': [u'A28LPPFS7FW2SD'], 'hitId': [u'3ZFRE2BDQ9EUS146TYXIS1N4DD0XZ5'], 'mode': [u'live']}
+[2018-08-08 15:55:09,691] ERROR in experiment: already_did_exp_hit (1010) {'assignmentId': [u'32VNZTT0A74WFSSYP862X7JOW96R4L'], 'workerId': [u'A28LPPFS7FW2SD'], 'hitId': [u'3ZFRE2BDQ9EUS146TYXIS1N4DD0XZ5'], 'mode': [u'live']}
+[2018-08-08 15:55:33,202] ERROR in experiment: already_did_exp_hit (1010) {'assignmentId': [u'32VNZTT0A74WFSSYP862X7JOW96R4L'], 'workerId': [u'A28LPPFS7FW2SD'], 'hitId': [u'3ZFRE2BDQ9EUS146TYXIS1N4DD0XZ5'], 'mode': [u'live']}
+[2018-08-08 15:59:34,033] ERROR in experiment: already_did_exp_hit (1010) {'assignmentId': [u'32VNZTT0A74WFSSYP862X7JOW96R4L'], 'workerId': [u'A28LPPFS7FW2SD'], 'hitId': [u'3ZFRE2BDQ9EUS146TYXIS1N4DD0XZ5'], 'mode': [u'live']}
+[2018-08-08 16:06:15 -0400] [58204] [ERROR] Error handling request
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/workers/sync.py", line 174, in handle_request
+    resp.write_file(respiter)
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/http/wsgi.py", line 397, in write_file
+    if not self.sendfile(respiter):
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/http/wsgi.py", line 387, in sendfile
+    sent += sendfile(sockno, fileno, offset + sent, count)
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/http/_sendfile.py", line 44, in sendfile
+    raise OSError(e, os.strerror(e))
+OSError: [Errno 32] Broken pipe
+[2018-08-08 16:09:42 -0400] [50578] [CRITICAL] WORKER TIMEOUT (pid:55007)
+[2019-02-06 11:26:08 -0500] [12784] [CRITICAL] WORKER TIMEOUT (pid:12789)
+[2019-02-06 11:26:08 -0500] [12784] [CRITICAL] WORKER TIMEOUT (pid:12791)
+[2019-02-06 11:26:08 -0500] [12784] [CRITICAL] WORKER TIMEOUT (pid:12795)
+[2019-02-06 11:26:08 -0500] [12784] [CRITICAL] WORKER TIMEOUT (pid:12796)
+[2019-02-06 11:34:12 -0500] [13056] [CRITICAL] WORKER TIMEOUT (pid:13060)
+[2019-02-06 11:34:12 -0500] [13056] [CRITICAL] WORKER TIMEOUT (pid:13062)
+[2019-02-06 11:34:12 -0500] [13056] [CRITICAL] WORKER TIMEOUT (pid:13064)
+[2019-02-06 11:34:12 -0500] [13056] [CRITICAL] WORKER TIMEOUT (pid:13066)
+[2019-02-06 11:38:59 -0500] [13509] [CRITICAL] WORKER TIMEOUT (pid:13514)
+[2019-02-06 11:38:59 -0500] [13509] [CRITICAL] WORKER TIMEOUT (pid:13519)
+[2019-02-06 11:38:59 -0500] [13509] [CRITICAL] WORKER TIMEOUT (pid:13521)
