@@ -1,0 +1,70 @@
+
+<div id="container-exp">
+	<div id="trial">
+		<div id="Top">
+		<h1><span class="instructions"></span></h1>
+	  </div>
+	  <div id="Bottom">
+		<h2><span class="guess"></span></h2>
+	  </div>
+		<div id="stim">
+			<!-- Here, we lay out an SVG with all the elements of our bug.
+			We'll resize them using d3 as necessary in task.js -->
+			<!-- information on SVG drawing:
+			https://developer.mozilla.org/en-US/docs/Web/SVG/Element -->
+			<svg id="canvas">
+				<path d="" fill="none" stroke="black" stroke-width="2" id="antennaLine"/>
+				<path d="" fill="white" stroke="black" stroke-width="2" id="antenna"/>
+				<circle cx="0" cy="0" r="0" fill="none" stroke="black" stroke-width="2" id="outerBulb"/>
+				<circle cx="0" cy="0" r="0" fill="none" stroke="black" stroke-width="2" id="antennaBulb2"/>
+				<circle cx="0" cy="0" r="0" fill="none" stroke="black" stroke-width="2" id="antennaBulb3"/>
+
+				<path d="" fill="none" stroke="black" stroke-width="2" id="ticks"/>
+				<path d="" fill="none" stroke="black" stroke-width="2" id="bodyLine"/>
+
+				<path d="" fill="none" stroke="black" stroke-width="2" id="beak1"/>
+				<path d="" fill="none" stroke="black" stroke-width="2" id="beak2"/>
+				<path d="" fill="none" stroke="black" stroke-width="2" id="beak3"/>
+				<path d="" fill="none" stroke="black" stroke-width="2" id="beak4"/>
+
+				<path d="" fill="none" stroke="black" stroke-width="3" id="leftTick"/>
+				<path d="" fill="none" stroke="black" stroke-width="3" id="midTick"/>
+				<path d="" fill="none" stroke="black" stroke-width="3" id="rightTick"/>
+				<path d="" fill="none" stroke="black" stroke-width="2" id="tongue"/>
+
+				<path d="" fill="none" stroke="black" stroke-width="2" id="leg"/>
+				<path d="" fill="none" stroke="black" stroke-width="2" id="footRight"/>
+				<path d="" fill="none" stroke="black" stroke-width="2" id="footLeft"/>
+
+				<path d="" fill="none" stroke="black" stroke-width="2" id="tail1"/>
+				<path d="" fill="none" stroke="black" stroke-width="2" id="tail2"/>
+				<path d="" fill="none" stroke="black" stroke-width="2" id="tail3"/>
+
+				<circle cx="0" cy="0" r="0" fill="black" stroke="pink" stroke-width="5" id="tailBulb1"/>
+				<circle cx="0" cy="0" r="0" fill="black" stroke="pink" stroke-width="5" id="tailBulb2"/>
+				<circle cx="0" cy="0" r="0" fill="black" stroke="pink" stroke-width="5" id="tailBulb3"/>
+
+				<circle cx="0" cy="0" r="0" fill="none" stroke="black" stroke-width="2" id="eyeOuter"/>
+				<circle cx="0" cy="0" r="0" fill="black" stroke="black" stroke-width="2" id="eyeInnerCircle"/>
+				<circle cx="0" cy="0" r="0" fill="black" stroke="black" stroke-width="2" id="eyeInnerCircle1"/>
+				<circle cx="0" cy="0" r="0" fill="black" stroke="black" stroke-width="2" id="eyeInnerCircle2"/>
+
+				<path d="" stroke="black" fill="none" stroke-width="2" id="spike1A"/>
+				<path d="" stroke="black" fill="none" stroke-width="2" id="spike1B"/>
+				<path d="" stroke="black" fill="none" stroke-width="2" id="spike2A"/>
+				<path d="" stroke="black" fill="none" stroke-width="2" id="spike2B"/>
+				<path d="" stroke="black" fill="none" stroke-width="2" id="spike3A"/>
+				<path d="" stroke="black" fill="none" stroke-width="2" id="spike3B"/>
+
+				<path d="" stroke="black" fill="none" stroke-width="4" id="leftWingStripe"/>
+				<path d="" stroke="black" fill="none" stroke-width="4" id="midLeftWingStripe"/>
+				<path d="" stroke="black" fill="none" stroke-width="4" id="midRightWingStripe"/>
+				<path d="" stroke="black" fill="none" stroke-width="4" id="rightWingStripe"/>
+			</svg>
+		</div>
+		<p><span class="feedback"></span><span class="category"></span></p>
+		<div id="query"></div>
+		<div id="result"></div>
+		<div id="debug"></div>
+	</div>
+</div>
