@@ -10,7 +10,7 @@ and be able to run this experiment locally, install python onto your computer an
 pip install psiturk
 ```
 
-Afterwards, clone this experiment onto your desktop and type onto your terminal: 
+Afterwards, clone this experiment onto your desktop and type on the terminal: 
 
 ```
 cd Desktop/G&C_OriginalStim
