@@ -204,7 +204,9 @@ function order(){
 	/* Probability table for how likely each category is to follow another.
 		         [[aa, ab, ac], [ba, bb, bc], [ca, cb, cc]]                 */
 	var probs = experiment.task == "interleaved" ?
+  /* Interleaved Probabilites: Likelihood of repeating a category = .25 */
 	[[0.25, 0.375, 0.375], [0.375, 0.25, 0.375], [0.375, 0.375, 0.25]]:
+  /* Blocked Probabilites: Likelihood of repeating a category = .75 */
 	[[.75, .125, .125], [.125, .75, .125], [.125, .125, .75]];
 
 	/* How many stimuli of each category we have and keep count of them . */
@@ -607,19 +609,22 @@ var Experiment = function(){
 		}
 	};
 
+  /* Display's the main html page on which stimuli is presented and removed. */
 	psiTurk.showPage("stage.html");
 
+  /* Tell's the computer to receive keyboard input. */
 	$("body").focus().keydown(response_handler);
 
 	start();
 };
 
+/* Display's a thank you message and asks the subject to complete a questionnaire */
 var thankYou = function () {
 	var error_message = "<h1>Oops!</h1><p>Something went wrong submitting your HIT. This might happen if you lose your internet connection. Press the button to resubmit.</p><button id='resubmit'>Resubmit</button>";
 	var question_number = 1;
 	var answer;
 
-	// Records data; Runs when the submit button is checked.
+	/* Records data; Runs when the submit button is checked. */
 	record_responses = function() {
 	var selectedVal = "";
 		var selected = $("input[type='radio']:checked");
@@ -628,18 +633,18 @@ var thankYou = function () {
 		}
 
 	psiTurk.recordTrialData([question_number, selectedVal]);
-	//increment question number
+	/* increment question number */
 	question_number++;
 	};
 
 
-	// Triggers re-submitting task if 10 seconds have elapsed in failure.
+	/* Triggers re-submitting task if 10 seconds have elapsed in failure. */
 	prompt_resubmit = function() {
 		replaceBody(error_message);
 		$("#resubmit").click(resubmit);
 	};
 
-	// Attempts to resubmit task
+	/* Attempts to resubmit task */
 	resubmit = function() {
 		replaceBody("<h1>Trying to resubmit...</h1>");
 		reprompt = setTimeout(prompt_resubmit, 10000);
@@ -657,7 +662,7 @@ var thankYou = function () {
 		});
 	};
 
-	 //Load the questionnaire snippet
+	/* Load the questionnaire */
 	psiTurk.saveData({
 			success: function() {
 								experiment.currentView = new demographicQuestions();
