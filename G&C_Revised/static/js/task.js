@@ -403,7 +403,7 @@ function drawbug(duration, showCategory, feedback, instruct){
 		" L " + (centX - 160 + bodyRx/2) + "," + (centY + 295);
 		svg.select("#footLeft").attr("d", path);
 
-	/* Draw Tail.
+	/* Draw Tail. */
 	var path =
 		" M " + (centX - 160) + "," + (centY + 150) +
 		" L " + (centX - 255) + "," + (centY + 280);
@@ -417,9 +417,9 @@ function drawbug(duration, showCategory, feedback, instruct){
 	var path =
 		" M " + (centX - 160) + "," + (centY + 150) +
 		" L " + (centX - 250) + "," + (centY + 230);
-		svg.select("#tail3").attr("d", path); */
+		svg.select("#tail3").attr("d", path);
 
-	/* Draw Tail Bulbs
+	/* Draw Tail Bulbs */
 	svg.select("#tailBulb1")
 				.attr("cx", centX-250)
 				.attr("cy", centY+278)
@@ -431,7 +431,7 @@ function drawbug(duration, showCategory, feedback, instruct){
 	svg.select("#tailBulb3")
 				.attr("cx", centX-250)
 				.attr("cy", centY+250)
-				.attr("r", eyeWidth/2); */
+				.attr("r", eyeWidth/2);
 
 	/* Draw Antenna. */
 	var path =
@@ -825,12 +825,13 @@ var Experiment = function(){
 	start();
 };
 
+/* Display's a thank you message and asks the subject to complete a questionnaire */
 var thankYou = function () {
 	var error_message = "<h1>Oops!</h1><p>Something went wrong submitting your HIT. This might happen if you lose your internet connection. Press the button to resubmit.</p><button id='resubmit'>Resubmit</button>";
 	var question_number = 1;
 	var answer;
 
-	// Records data; Runs when the submit button is checked.
+	/* Records data; Runs when the submit button is checked. */
 	record_responses = function() {
 	var selectedVal = "";
 		var selected = $("input[type='radio']:checked");
@@ -839,12 +840,12 @@ var thankYou = function () {
 		}
 
 	psiTurk.recordTrialData([question_number, selectedVal]);
-	//increment question number
+	/* increment question number */
 	question_number++;
 	};
 
 
-	// Triggers re-submitting task if 10 seconds have elapsed in failure.
+	/* Triggers re-submitting task if 10 seconds have elapsed in failure. */
 	prompt_resubmit = function() {
 		replaceBody(error_message);
 		$("#resubmit").click(resubmit);
@@ -868,7 +869,7 @@ var thankYou = function () {
 		});
 	};
 
-	 //Load the questionnaire snippet
+	/* Attempts to resubmit task */
 	psiTurk.saveData({
 			success: function() {
 								experiment.currentView = new demographicQuestions();
