@@ -33,5 +33,5 @@ Under templates are all the html webpages used in the experiment, including the 
 Summaries of accuracy in tests and study phases as well as bar graphs comparing the two can be found as well in each respective folder.
 
 ## My Contribution
-Since I was the only one that worked on this code, everything was done locally on a computer in the lab and therefore I didn't use github to 
+Since I was the only one that worked on this code, everything was done locally on a computer in the lab and therefore the commit history consists of me uploading all the code in one go and deleting files that were unimportant. I wrote the code in the task.js folder, the layout in all the html pages, and the css style sheets, changing what was necessary from the template stroop experiment provided by Psiturk.
 
